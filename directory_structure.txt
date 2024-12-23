@@ -1,0 +1,77 @@
+.
+├── README.md
+├── app
+│   ├── accommodations
+│   │   ├── [id]
+│   │   │   └── page.tsx
+│   │   ├── layout.tsx
+│   │   └── page.tsx
+│   ├── favicon.ico
+│   ├── globals.css
+│   ├── layout.tsx
+│   └── page.tsx
+├── components
+│   ├── FilterBar.tsx
+│   ├── SearchBar.tsx
+│   ├── SimilarPlaces.tsx
+│   ├── accommodations
+│   │   ├── AccommodationCard.tsx
+│   │   ├── AccommodationDetail.tsx
+│   │   └── AccommodationGallery.tsx
+│   ├── common
+│   │   ├── BreadCrumb.tsx
+│   │   ├── ErrorModal.tsx
+│   │   ├── Footer.tsx
+│   │   ├── Header.tsx
+│   │   ├── LoadingModal.tsx
+│   │   ├── Modal.tsx
+│   │   └── SuccessModal.tsx
+│   └── ui
+│       ├── breadcrumb.tsx
+│       ├── button.tsx
+│       ├── calendar.tsx
+│       ├── card.tsx
+│       ├── dialog.tsx
+│       ├── input.tsx
+│       ├── pagination.tsx
+│       ├── popover.tsx
+│       ├── select.tsx
+│       ├── table.tsx
+│       └── textarea.tsx
+├── components.json
+├── context
+│   └── AccommodationsContext.tsx
+├── directory_structure.txt
+├── eslint.config.mjs
+├── hooks
+│   ├── useAccommodationDetails.ts
+│   └── useFetch.tsx
+├── lib
+│   ├── api.ts
+│   ├── openaiService.ts
+│   ├── types.ts
+│   └── utils.ts
+├── next-env.d.ts
+├── next.config.ts
+├── package-lock.json
+├── package.json
+├── postcss.config.mjs
+├── public
+│   ├── athlos_logo.avif
+│   ├── file.svg
+│   ├── globe.svg
+│   ├── images
+│   │   ├── bg-hoteles.jpg
+│   │   ├── bg_hotel.jpg
+│   │   ├── not_found.png
+│   │   └── ok.png
+│   ├── next.svg
+│   ├── vercel.svg
+│   └── window.svg
+├── tailwind.config.ts
+├── tests
+├── tsconfig.json
+└── utils
+    └── localStorage.ts
+
+15 directories, 60 files
