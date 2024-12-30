@@ -36,14 +36,6 @@ To get started with the project, follow these simple steps:
    npm install
 ```
 
-### 3. Set Up Environment Variables
-   You’ll need to set up your environment variables for the project to work:
-   - Create a `.env.local` file at the root of the project.
-   - Add your OpenAI API key (used for generating accommodation descriptions):
-```bash
-     OPENAI_API_KEY=your-api-key-here
-```
-
 ### 4. Start the Development Server
    Once the dependencies are installed and the environment variables are set, start the development server:
 ```bash
