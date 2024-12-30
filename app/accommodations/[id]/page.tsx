@@ -1,4 +1,4 @@
-"use client";
+'use client'
 import AccommodationDetail from "@/components/accommodations/AccommodationDetail";
 import { useParams } from "next/navigation";
 

@@ -41,7 +41,7 @@ const AccommodationsPage = () => {
 };
 
 const ErrorState = () => (
-  <div className="flex flex-col items-center justify-center py-8">
+  <div className="flex flex-col gap-8 items-center justify-center py-8">
     <Image
       src="/images/not_found.png"
       alt="Error"

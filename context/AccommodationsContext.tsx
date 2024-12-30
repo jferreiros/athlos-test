@@ -1,6 +1,5 @@
 import React, { createContext, useContext, useState, useEffect } from "react";
 import { Accommodation } from "@/lib/types";
-import ErrorModal from "@/components/common/ErrorModal";
 import SuccessModal from "@/components/common/SuccessModal";
 import {
   fetchAccommodations,
@@ -88,7 +87,6 @@ export const AccommodationsProvider: React.FC<{
       } catch (err: unknown) {
         const error = err as Error;
         setError(error.message);
-        showModal("error", "Failed to fetch accommodations.");
       } finally {
         setLoading(false);
       }
@@ -198,9 +196,6 @@ export const AccommodationsProvider: React.FC<{
   return (
     <AccommodationsContext.Provider value={contextValue}>
       {children}
-      {modalState.type === "error" && (
-        <ErrorModal isOpen onClose={hideModal} message={modalState.message} />
-      )}
       {modalState.type === "success" && (
         <SuccessModal isOpen onClose={hideModal} message={modalState.message} />
       )}

@@ -1,36 +1,85 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Athlos Travel | Technical Test for Frontend Engineer
+
+This repository contains the solution for the **Frontend Engineer** technical test for **Athlos Travel**. The goal of the test is to evaluate your skills in **problem-solving**, **UI/UX design**, and **API integration** by building a frontend application.
+
+The project implements a **Next.js** web app that allows users to search, filter, and view accommodation data fetched from a simulated API. The app provides the following features:
+
+- **Search Tool**: Users can search accommodations by name or keyword.
+- **Filters**: Users can filter accommodations by location, category (stars), type, and other relevant criteria.
+- **Accommodation Details**: Each accommodation card links to a detailed page showing more information, including photos and descriptions.
+  
+The application was designed to showcase **clean code**, **responsive design**, and a **user-friendly interface**. While this is not a fully operational app for production, it demonstrates the key aspects of frontend development and design thinking.
+
+
+## Key Features
+
+- **Accommodation Cards**: Browse through accommodation options, including location, room details, and ratings.
+- **Accommodation Details**: View detailed information for each property, including photos, description, and contact info.
+- **Filters**: Narrow down your options by location, type of stay, and rating to find the perfect match.
+- **Pagination**: Easily navigate between pages of accommodation options.
+- **Similar Accommodations**: Discover similar places to your current selection.
 
 ## Getting Started
 
-First, run the development server:
+To get started with the project, follow these simple steps:
 
+### 1. Clone the Repository
+   First, clone the repository to your local machine:
+   ```bash
+   git clone https://github.com/jferreiros/athlos-travel.git
+   cd athlos-travel
+   ```
+
+### 2. Install Dependencies
+   After cloning the repository, navigate into the project folder and run the following command to install all the required dependencies:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+   npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 3. Set Up Environment Variables
+   You’ll need to set up your environment variables for the project to work:
+   - Create a `.env.local` file at the root of the project.
+   - Add your OpenAI API key (used for generating accommodation descriptions):
+```bash
+     OPENAI_API_KEY=your-api-key-here
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 4. Start the Development Server
+   Once the dependencies are installed and the environment variables are set, start the development server:
+```bash
+   npm run dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 5. Open the App
+Now, you can visit the app by navigating to [http://localhost:3000](http://localhost:3000) in your browser and start exploring!
 
-## Learn More
+## Technologies Used
 
-To learn more about Next.js, take a look at the following resources:
+- **Frontend**: React, Next.js, TypeScript, Tailwind CSS
+- **State Management**: React Context API
+- **Libraries**:
+  - [React Photo View](https://www.npmjs.com/package/react-photo-view) for the image gallery functionality
+  - [Lucide Icons](https://lucide.dev/) for clean and scalable icons
+  - [React-Day-Picker](https://react-day-picker.js.org/) for easy date range selection
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Project Structure
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Here’s a quick overview of how the project is organized:
 
-## Deploy on Vercel
+- **`app/`**: Contains the main pages of the application, such as the accommodation listing and detail pages.
+- **`components/`**: Reusable components like the accommodation card, filter bar, and pagination controls.
+- **`context/`**: The context provider for global state management across the app.
+- **`services/`**: Handles external API calls, such as fetching accommodation data and generating descriptions using OpenAI.
+- **`lib/`**: Utility functions and types that are shared across the project.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## How to Use the App
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. **Browse Accommodations**: Go to the homepage or the accommodations listing page to see all available properties, each with details like location, price, and rating.
+2. **Filter Your Search**: Use the filter bar to narrow down your search by location, accommodation type, or rating to find exactly what you’re looking for.
+3. **View Details**: Click on any accommodation card to view more details, such as photos, descriptions, and contact information.
+4. **Request a Booking**: On the accommodation details page, you can select check-in and check-out dates, group size, and leave additional notes before submitting a request.
+
+## License
+
+This project is licensed under the MIT License.
+

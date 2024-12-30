@@ -1,5 +1,3 @@
-"use client";
-
 import { useEffect, useState } from "react";
 import { AccommodationDetails } from "@/lib/types";
 import { Button } from "@/components/ui/button";
@@ -28,6 +26,7 @@ import { useAccommodations } from "@/context/AccommodationsContext";
 import AccommodationGallery from "@/components/accommodations/AccommodationGallery";
 import Loader from "../common/Loader";
 import Link from "next/link";
+import { generateDefaultDescription } from "@/utils/generateDescription";
 
 interface AccommodationDetailProps {
   id: string;
@@ -57,11 +56,7 @@ const AccommodationDetail: React.FC<AccommodationDetailProps> = ({ id }) => {
         const result = await response.json();
 
         if (!result.description) {
-          const generatedDescription = await generateDescription(
-            result.name,
-            result.location
-          );
-          result.description = generatedDescription;
+          result.description = generateDefaultDescription();
         }
         result.photos = result.photos?.split(",") || [];
         setData(result);
@@ -166,7 +161,7 @@ const AccommodationDetail: React.FC<AccommodationDetailProps> = ({ id }) => {
 
         <CardContent className="p-4 md:p-8 gap-4 flex flex-col">
           <div className="flex flex-col md:flex-row gap-8">
-            <div>
+            <div className=" flex-grow">
               <h2 className="text-lg font-bold">Overview</h2>
               {data?.description ? (
                 <div
@@ -178,7 +173,7 @@ const AccommodationDetail: React.FC<AccommodationDetailProps> = ({ id }) => {
               )}
             </div>
 
-            <div className="flex flex-col w-full md:w-[100vw] justify-end border-[1px] shadow-lg rounded-xl p-6 gap-4">
+            <div className="flex flex-col w-full md:w-80 justify-end border-[1px] shadow-lg rounded-xl p-6 gap-4">
               <h3 className="text-lg font-bold mb-2">Request Information</h3>
               <div className="flex gap-4 justify-between">
                 <div className="flex flex-col gap-4 flex-grow">
@@ -191,16 +186,16 @@ const AccommodationDetail: React.FC<AccommodationDetailProps> = ({ id }) => {
                         <FaCalendar className="" />
                         {dateRange?.from
                           ? new Intl.DateTimeFormat("en-GB", {
-                              day: "numeric",
-                              month: "short",
-                            }).format(dateRange.from)
+                            day: "numeric",
+                            month: "short",
+                          }).format(dateRange.from)
                           : "Check-in"}{" "}
                         -{" "}
                         {dateRange?.to
                           ? new Intl.DateTimeFormat("en-GB", {
-                              day: "numeric",
-                              month: "short",
-                            }).format(dateRange.to)
+                            day: "numeric",
+                            month: "short",
+                          }).format(dateRange.to)
                           : "Check-out"}
                       </Button>
                     </PopoverTrigger>
