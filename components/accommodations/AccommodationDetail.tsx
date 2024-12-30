@@ -20,7 +20,6 @@ import {
 import { DayPicker, DateRange } from "react-day-picker";
 import { useRouter } from "next/navigation";
 import "react-day-picker/dist/style.css";
-import { generateDescription } from "@/services/openaiService";
 import SimilarPlaces from "@/components/accommodations/SimilarAccommodations";
 import { useAccommodations } from "@/context/AccommodationsContext";
 import AccommodationGallery from "@/components/accommodations/AccommodationGallery";
